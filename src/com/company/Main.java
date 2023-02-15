@@ -1,15 +1,15 @@
 package com.company;
-import java.io.*;
+import java.io.File;
 
 import static com.company.DirectoryLister.listDirectory;
 
 public class Main {
     public static void main(String[] args) {
 
-        String dir = System.getProperty("user.dir");
-        System.out.println("current dir = " + dir);
+        String directory = System.getProperty("user.dir");
+        System.out.println(String.format("current dir = %s", directory));
 
-        File directory = new File(dir);
-        listDirectory(directory);
+        File file[] = new File(directory).listFiles();
+        listDirectory(file);
     }
 }
